@@ -1,0 +1,323 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+    background-color: #30703d; 
+    color: #f4f9f6;
+    text-align: center;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+header h1 {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #d6be68;
+    font-size: 1.2em;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+.background-container {
+    position: relative;
+    background-image: url('images/food.webp');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.quotes {
+    position: absolute;
+    color: #ddd7de;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    animation: slide 15s infinite;
+    transition: opacity 2s ease-in-out, transform 10s ease-in-out;
+}
+
+
+@keyframes slide {
+    0% {transform: translateY(100%);}
+    25% {transform: translateY(0);}
+    50% {transform: translateY(-100%);}
+    75% {transform: translateY(0);}
+    100% {transform: translateY(100%);}
+}
+
+
+.recipe-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px;
+    background-color: #d7cadf;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.recipe-container img {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;/* auto*/
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-details {
+    flex: 1;
+    padding: 20px;
+    line-height: 1.4; 
+}
+
+.recipe-details h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #080606;
+}
+
+.recipe-details h3 {
+    font-size: 1.5em;
+    margin-top: 20px;
+    color: #030303;
+    line-height: 1.4; 
+}
+
+.recipe-details ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: #0a0707;
+    line-height: 1.4; 
+}
+
+.recipe-details p {
+    margin-top: 10px;
+    color: #050303;
+    line-height: 1.4; 
+}
+
+
+.chatbox-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 280px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    transition: width 0.3s ease;
+}
+
+.chatbox-header {
+    background-color: #64c398; 
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    color: white;
+}
+
+.chatbox-body {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+}
+
+.messages {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.chatbox-input {
+    display: flex;
+    border-top: 1px solid #ccc;
+}
+
+.chatbox-input input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 0;
+    font-size: 1em;
+    outline: none;
+}
+
+.chatbox-input button {
+    background-color: #338453; 
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.chatbox-input button:hover {
+    background-color: #dde3d6;
+}
+
+
+.search-container {
+    position: absolute;
+    bottom: 10px; /* Adjust this value to move the search bar up or down */
+    right: 20px;  /* Adjust this value to move the search bar left or right */
+    display: flex;
+    align-items: center;
+}
+
+#searchInput {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    font-size: 16px;
+    background-color: #163d0d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #5684b4;
+}
+
+footer {
+    background-color: #30703d;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .quotes {
+        font-size: 1.5em;
+    }
+    .recipe-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .recipe-details {
+        padding-top: 20px;
+    }
+    .chatbox-container {
+        width: 80%; /* Adjust width for tablets */
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .chatbox-header {
+        font-size: 1.1em;
+    }
+
+    .chatbox-input input {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+
+    .chatbox-input button {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .quotes {
+        font-size: 1.2em;
+    }
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .recipe-details h2 {
+        font-size: 1.5em;
+    }
+
+    .recipe-details h3 {
+        font-size: 1.2em;
+    }
+    .chatbox-container {
+        width: 100%; /* Full width for mobile */
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+    }
+
+    .chatbox-header {
+        font-size: 1em;
+    }
+
+    .chatbox-body {
+        height: 150px; /* Adjust height for smaller screens */
+    }
+
+    .chatbox-input input {
+        padding: 6px;
+        font-size: 0.8em;
+    }
+
+    .chatbox-input button {
+        padding: 6px;
+        font-size: 0.8em;
+    }
+}
